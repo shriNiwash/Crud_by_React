@@ -29,7 +29,6 @@ const Insert = () => {
   })
     .then((response)=>response.json())
     .then((daa)=>{
-      console.log(daa);
       navigate("/list");
     });
   }

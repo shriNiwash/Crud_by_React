@@ -11,7 +11,13 @@ const List = () => {
     getItems();
   }, []);
 
+  function alertData(id){
+    return alert("Are Your Sure Want to Delete" +id);
+  
+  }
+
 function handleDelete(id) {
+  alertData(id);
     fetch(`https://my-web-crud.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
@@ -54,7 +60,7 @@ function handleDelete(id) {
                 <td>{list.name}</td>
                 <td>{list.sold}</td>
                 <td>
-                  <Link to={`/update/${list._id}`}>Update</Link>{" "}
+                  <Link to={`/update/${list._id}`}>Update</Link>
                   <Button onClick={() => handleDelete(list._id)}>Delete</Button>
                 </td>
               </tr>
